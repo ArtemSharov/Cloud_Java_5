@@ -15,14 +15,19 @@ public class Network {
         return in;
     }
 
+    public Socket getSocket(){
+        return socket;
+    }
+
     public static void start(){
         try{
-            socket = new Socket("localhost",8189);
+            socket = new Socket("localhost",8101);
             out = new ObjectEncoderOutputStream(socket.getOutputStream());
             in = new ObjectDecoderInputStream(socket.getInputStream());
         } catch (IOException e){
             e.printStackTrace();
         }
+
     }
 
     public static void stop(){
