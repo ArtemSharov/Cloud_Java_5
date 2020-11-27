@@ -36,12 +36,18 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Button fx:id="enter" layoutX="278.0" layoutY="390.0" mnemonicParsing="false" onAction="#loginUser" prefHeight="26.0" prefWidth="67.0" text="Enter" />
+            <Button fx:id="enter" layoutX="278.0" layoutY="390.0" mnemonicParsing="false" onAction="#loginUser" prefHeight="26.0" prefWidth="67.0" text="Enter">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
             <Label fx:id="msg" layoutX="434.0" layoutY="373.0" prefHeight="54.0" prefWidth="251.0" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Button fx:id="logout" disable="true" layoutX="355.0" layoutY="390.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="67.0" text="Logout" />
+            <Button fx:id="logout" disable="true" layoutX="355.0" layoutY="390.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="67.0" text="Logout">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </children>
