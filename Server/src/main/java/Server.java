@@ -20,16 +20,21 @@ public class Server {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             socketChannel.pipeline().addLast(
+
                                     new ObjectEncoder(),
                                     new ObjectDecoder(
                                             ClassResolvers
                                                     .cacheDisabled(null)
                                     ),
+                                   //new TestHandler(),
+
+
                                     new MainHandler());
                         }
                     });
             System.out.println("server started");
-            ChannelFuture future = bootstrap.bind(8190).sync();
+            ChannelFuture future = bootstrap.bind(8101).sync();
+
             future.channel().closeFuture().sync();
             System.out.println("server closed");
         } catch (InterruptedException e) {

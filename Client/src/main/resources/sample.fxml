@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
    <columnConstraints>
@@ -15,17 +16,38 @@
          <children>
             <ListView fx:id="clientFilesList" layoutX="14.0" layoutY="43.0" prefHeight="310.0" prefWidth="311.0" />
             <ListView fx:id="serverFilesList" layoutX="374.0" layoutY="43.0" prefHeight="310.0" prefWidth="311.0" />
-            <ScrollBar layoutX="311.0" layoutY="43.0" orientation="VERTICAL" prefHeight="310.0" prefWidth="14.0" />
-            <ScrollBar layoutX="671.0" layoutY="43.0" orientation="VERTICAL" prefHeight="310.0" prefWidth="14.0" />
-            <Button layoutX="338.0" layoutY="62.0" mnemonicParsing="false" text="&gt;" />
-            <Button layoutX="338.0" layoutY="106.0" mnemonicParsing="false" text="&lt;" />
-            <Label layoutX="142.0" layoutY="24.0" prefHeight="18.0" prefWidth="56.0" text="Your files" />
-            <Label layoutX="501.0" layoutY="24.0" text="Server files" />
-            <TextField layoutX="21.0" layoutY="378.0" prefHeight="26.0" prefWidth="120.0" />
-            <TextField layoutX="149.0" layoutY="378.0" prefHeight="26.0" prefWidth="120.0" />
-            <Label layoutX="66.0" layoutY="361.0" text="Login" />
-            <Label layoutX="184.0" layoutY="361.0" text="Password" />
-            <Button layoutX="281.0" layoutY="378.0" mnemonicParsing="false" text="Enter" />
+            <Button fx:id="upload" layoutX="338.0" layoutY="62.0" mnemonicParsing="false" onAction="#uploadFile" text="&gt;" />
+            <Button fx:id="download" layoutX="338.0" layoutY="106.0" mnemonicParsing="false" onAction="#downloadFile" text="&lt;" />
+            <Label layoutX="68.0" layoutY="14.0" prefHeight="27.0" prefWidth="202.0" text="Your files in a computer">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="446.0" layoutY="14.0" prefHeight="27.0" prefWidth="166.0" text="Your files in a server" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="login" layoutX="21.0" layoutY="391.0" prefHeight="26.0" prefWidth="120.0" />
+            <PasswordField fx:id="password" layoutX="149.0" layoutY="390.0" prefHeight="26.0" prefWidth="120.0" />
+            <Label layoutX="59.0" layoutY="356.0" text="Login">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label layoutX="171.0" layoutY="356.0" text="Password">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Button fx:id="enter" layoutX="278.0" layoutY="390.0" mnemonicParsing="false" onAction="#loginUser" prefHeight="26.0" prefWidth="67.0" text="Enter">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
+            <Label fx:id="msg" layoutX="434.0" layoutY="373.0" prefHeight="54.0" prefWidth="251.0" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Button fx:id="logout" disable="true" layoutX="355.0" layoutY="390.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="67.0" text="Logout">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
          </children>
       </AnchorPane>
    </children>
